@@ -3,10 +3,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        RPS playRPS = new RPS();
         Scanner input = new Scanner(System.in);
         System.out.println("How many times would you like to play?");
         int turnAmount = input.nextInt();
+        rpsPlay(turnAmount);
+    }
+
+    public static void rpsPlay(int turnAmount) {
+
+        Scanner input = new Scanner(System.in);
+        RPS playRPS = new RPS();
 
         int count = 0;
         while (count < turnAmount) {
@@ -30,7 +36,7 @@ public class Main {
             System.out.println(playRPS.battle(playHand, comHand));
             int resultat = playRPS.battle(playHand, comHand);
 
-            if (resultat == 0) System.out.println("Computer played the same hand as you");
+            if (resultat == 0) System.out.println("Computer played the same hand as you, it's a draw");
             if (resultat == 1) System.out.println("Computer played the wrong hand you win");
             if (resultat == 2) System.out.println("Computer played the right hand Computer wins");
         count++;
